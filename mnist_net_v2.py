@@ -29,7 +29,6 @@ for _ in range(1000):
 
 print("Training Complete. Starting Testing")
 
-#network_answer = tf.equal(tf.argmax(output, 1), tf.argmax(labels, 1))
 network_answer = sess.run(tf.argmax(output, 1), feed_dict={input_layer: mnist_data.test.images, labels:mnist_data.test.labels})
 test_labels = sess.run(tf.argmax(mnist_data.test.labels, 1), feed_dict={input_layer: mnist_data.test.images, labels:mnist_data.test.labels})
 
